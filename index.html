@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter</title>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f5f0e8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 380px;
+        }
+
+        .label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #444444;
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #222;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            color: #222;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 36px;
+            padding: 8px 0;
+            outline: none;
+            margin-bottom: 32px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="number"]:focus {
+            border-bottom-color: #222;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        button {
+            background: #222;
+            border: none;
+            color: #f5f0e8;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            padding: 14px 28px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        button:hover { opacity: 0.7; }
+        button:active { opacity: 0.5; }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 32px 0;
+        }
+
+        .output-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #212121;
+            margin-bottom: 12px;
+        }
+
+        #output {
+            font-size: 24px;
+            color: #222;
+            letter-spacing: 2px;
+            word-break: break-all;
+            line-height: 1.8;
+            min-height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="label">Converter / 001</div>
+        <h1>Input a number to convert</h1>
+        <input type="number" id="input" placeholder="0">
+        <button onclick="convert()">Convert</button>
+        <hr class="divider">
+        <div class="output-label">Binary</div>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function convert() {
+            const input = document.getElementById("input");
+            const output = document.getElementById("output");
+            const parsed = parseInt(input.value);
+            const binary = parsed.toString(2);
+            output.innerHTML = binary;
+        }
+    </script>
+</body>
+</html>
