@@ -250,7 +250,7 @@
             const output = document.getElementById("output");
             const parsed = parseInt(input.value);
             if (isNaN(parsed) || input.value === "") {
-                output.innerHTML = "a number would help...";
+                output.innerHTML = "a number would <br>help...";
                 return;
             }
             if (parsed < 0) {
